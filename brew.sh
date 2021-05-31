@@ -72,6 +72,7 @@ brew install nmap
 # Install other useful binaries.
 # brew install ack
 #brew install exiv2
+brew install httpie
 brew install git
 brew install git-lfs
 brew install gs
