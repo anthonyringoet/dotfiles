@@ -112,6 +112,7 @@ brew install --cask lens
 brew install --cask docker
 brew install --cask firefox
 brew install --cask microsoft-edge
+brew install --cask google-chrome
 brew install --cask iterm2
 brew install --cask keepingyouawake
 brew install --cask karabiner-elements
