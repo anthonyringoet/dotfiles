@@ -114,6 +114,7 @@ brew install --cask firefox
 brew install --cask microsoft-edge
 brew install --cask google-chrome
 brew install --cask iterm2
+brew install --cask pdf-squeezer
 brew install --cask keepingyouawake
 brew install --cask karabiner-elements
 brew install --cask quicklook-csv
