@@ -110,6 +110,7 @@ brew install --cask alfred
 brew install --cask rectangle
 brew install --cask lens
 brew install --cask docker
+brew install --cask fork
 brew install --cask firefox
 brew install --cask microsoft-edge
 brew install --cask google-chrome
