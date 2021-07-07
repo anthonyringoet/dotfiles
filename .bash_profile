@@ -51,4 +51,6 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# apple silicon macs homebrew files should live under `/opt/homebrew`
+# if intel: this eval breaks `brew` cli, so dont do it please
+[[ -f /opt/homebrew/bin/brew ]] && echo "yes" && eval "$(/opt/homebrew/bin/brew shellenv)"
