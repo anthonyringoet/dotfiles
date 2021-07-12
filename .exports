@@ -2,7 +2,7 @@
 
 # Make vim the default editor.
 export EDITOR='nano';
-export KUBE_EDITOR='subl';
+export KUBE_EDITOR='nano';
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
