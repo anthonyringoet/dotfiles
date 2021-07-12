@@ -53,4 +53,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # homebrew
 # apple silicon macs homebrew files should live under `/opt/homebrew`
 # if intel: this eval breaks `brew` cli, so dont do it please
-[[ -f /opt/homebrew/bin/brew ]] && echo "yes" && eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
