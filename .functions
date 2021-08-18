@@ -169,3 +169,8 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function randombytes() {
+	local bytes="${1:-40}"
+	openssl rand -base64 "${bytes}" | pbcopy
+}
