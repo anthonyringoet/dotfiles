@@ -197,8 +197,9 @@ dssh() {
 
 # Usage:
 ##########
-# dcu            : docker-compose up -d
-# dcd            : docker-compose down -v
+# dcu            : docker-compose up --remove-orphans
+# dcud           : docker-compose up -d --remove-orphans
+# dcd            : docker-compose down -v --remove-orphans
 # dex <container>: execute a bash shell inside the RUNNING <container>
 # di <container> : docker inspect <container>
 # dim            : docker images
@@ -251,7 +252,8 @@ function dsr-fn {
 
 alias dc="docker-compose"
 alias dcu="docker-compose up --remove-orphans"
-alias dcd="docker-compose down -v"
+alias dcud="docker-compose up -d --remove-orphans"
+alias dcd="docker-compose down -v --remove-orphans"
 # alias dex="dex-fn"
 # alias di="di-fn"
 # alias dim="docker images"
