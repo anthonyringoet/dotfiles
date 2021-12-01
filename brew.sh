@@ -109,8 +109,7 @@ brew install watch
 # casks
 brew install --cask alfred
 brew install --cask rectangle
-brew install --cask lens
-brew install --cask docker
+# brew install --cask lens # k8s ui
 brew install --cask fork
 brew install --cask firefox
 brew install --cask microsoft-edge
