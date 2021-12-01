@@ -20,6 +20,10 @@ alias k=kubectl
 alias gitpulls='find . -type d -maxdepth 1 -exec bash -c "echo '{}' && cd '{}' && git pull origin HEAD" \;'
 
 # https://remysharp.com/2018/08/23/cli-improved
+# ignoring these improvements:
+# \cat # ignore aliases named "cat" - explanation: https://stackoverflow.com/a/16506263/22617
+# $ command cat # ignore functions and aliases
+
 alias cat='bat'
 alias ping='prettyping --nolegend'
 
