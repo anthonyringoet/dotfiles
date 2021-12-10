@@ -91,6 +91,7 @@ brew install tmux
 # brew install zopfli
 brew install ykman # yubikey cli
 brew install gh # github cli
+brew install defaultbrowser # set default browser cli
 
 # cli improvements
 # https://remysharp.com/2018/08/23/cli-improved
