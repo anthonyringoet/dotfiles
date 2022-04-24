@@ -171,6 +171,6 @@ function tre() {
 }
 
 function randombytes() {
-	local bytes="${1:-40}"
-	openssl rand -base64 "${bytes}" | pbcopy
+	local bytes="${1:-100}"
+	openssl rand -hex "${bytes}" | pbcopy
 }
