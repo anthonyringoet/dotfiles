@@ -72,6 +72,7 @@ brew install nmap
 # Install other useful binaries.
 # brew install ack
 #brew install exiv2
+brew install httpstat
 brew install httpie
 brew install git
 brew install git-lfs
@@ -92,6 +93,7 @@ brew install tmux
 brew install ykman # yubikey cli
 brew install gh # github cli
 brew install defaultbrowser # set default browser cli
+brew install shellcheck
 
 # cli improvements
 # https://remysharp.com/2018/08/23/cli-improved
