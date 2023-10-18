@@ -110,7 +110,6 @@ brew install m-cli # mac cli for basically everything
 brew install watch
 
 # casks
-brew install --cask alfred
 brew install --cask rectangle
 # brew install --cask lens # k8s ui
 brew install --cask docker
@@ -125,15 +124,14 @@ brew install --cask quicklook-csv
 brew install --cask quicklook-json
 brew install --cask transmission
 brew install --cask sublime-text
-brew install --cask whatsapp
-brew install --cask signal
+# brew install --cask whatsapp
+# brew install --cask signal
 brew install --cask slack
 brew install --cask imageoptim
-brew install --cask charles
+# brew install --cask charles
 brew install --cask atext
 brew install --cask grandperspective
-brew install --cask dropbox
-brew install --cask brave-browser
+# brew install --cask brave-browser
 brew install --cask visual-studio-code
 brew install --cask spotify
 
