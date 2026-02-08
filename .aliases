@@ -52,8 +52,8 @@ alias ll="ls -al"
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias fgrep='grep -F --color=auto'
+alias egrep='grep -E --color=auto'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -175,18 +175,7 @@ alias reset='git reset --hard'
 alias branch='git branch | grep \* | cut -c 3-'
 alias getbranch='branch | pbcopy'
 alias subup='git submodule sync --recursive && git submodule update --init --recursive'
-# alias subpull='git submodule foreach git pull origin master'
-alias gitsub='echo ‘**************************’; git fetch --tags; git branch; git pull; git submodule sync --recursive; git submodule update --init --recursive; git status; echo'
-
-# updatethis() {
-# 	#echo '**************************'; git fetch --tags; git checkout develop; git branch; git pull; git submodule init; git submodule update --recursive; git submodule foreach git pull origin HEAD; git status; echo
-# 	echo '**************************'; git fetch --tags; git branch; git pull; git submodule sync --recursive; git submodule update --init --recursive; git status; echo
-# }
-
-# updateall() {
-# 	#for dir in `find .  -type d -depth 1`; do echo '**************************';builtin cd $dir; echo -e '\033[0;32m'`pwd`'\033[0m'; git fetch --tags; git checkout develop; git branch; git pull; git submodule init; git submodule update --recursive; git submodule foreach git pull origin HEAD; git status; builtin cd ..; echo; echo; echo; done
-# 	for dir in `find .  -type d -depth 1`; do echo '**************************';builtin cd $dir; echo -e '\033[0;32m'`pwd`'\033[0m'; git fetch --tags; git checkout develop; git branch; git pull origin HEAD; git submodule sync --recursive; git submodule update --init --recursive; git status; builtin cd ..; echo; echo; echo; done
-# }
+alias gitsub='echo '**************************'; git fetch --tags; git branch; git pull; git submodule sync --recursive; git submodule update --init --recursive; git status; echo'
 
 # docker ssh
 # example usage: `dssh webapp_1`
@@ -195,77 +184,7 @@ dssh() {
 }
 
 # docker compose
-#################
-
-# Usage:
-##########
-# dcu            : docker-compose up --remove-orphans
-# dcud           : docker-compose up -d --remove-orphans
-# dcd            : docker-compose down -v --remove-orphans
-# dex <container>: execute a bash shell inside the RUNNING <container>
-# di <container> : docker inspect <container>
-# dim            : docker images
-# dip            : IP addresses of all running containers
-# dl <container> : docker logs -f <container>
-# dnames         : names of all running containers
-# dps            : docker ps
-# dpsa           : docker ps -a
-# drmc           : remove all exited containers
-# drmid          : remove all dangling images
-# drun <image>   : execute a bash shell in NEW container from <image>
-# dsr <container>: stop then remove <container>
-
-function dnames-fn {
-	for ID in `docker ps | awk '{print $1}' | grep -v 'CONTAINER'`
-	do
-    	docker inspect $ID | grep Name | head -1 | awk '{print $2}' | sed 's/,//g' | sed 's%/%%g' | sed 's/"//g'
-	done
-}
-
-function dip-fn {
-	echo "IP addresses of all named running containers"
-
-	for DOC in `dnames-fn`
-	do
-  		IP=`docker inspect $DOC | grep -m3 IPAddress | cut -d '"' -f 4 | tr -d "\n"`
-  		echo $DOC : $IP
-	done
-}
-
-function dex-fn {
-	docker exec -it $1 /bin/bash
-}
-
-function di-fn {
-	docker inspect $1
-}
-
-function dl-fn {
-	docker logs -f $1
-}
-
-function drun-fn {
-	docker run -it $1 /bin/bash
-}
-
-function dsr-fn {
-	docker stop $1;docker rm $1
-}
-
 alias dc="docker-compose"
 alias dcu="docker-compose up --remove-orphans"
 alias dcud="docker-compose up -d --remove-orphans"
 alias dcd="docker-compose down -v --remove-orphans"
-# alias dex="dex-fn"
-# alias di="di-fn"
-# alias dim="docker images"
-# alias dip="dip-fn"
-# alias dl="dl-fn"
-# alias dnames="dnames-fn"
-# alias dps="docker ps"
-# alias dpsa="docker ps -a"
-# alias drmc="docker rm $(docker ps --all -q -f status=exited)"
-# alias drmid="docker rmi $( docker images -q -f dangling=true)"
-# alias drun="drun-fn"
-# alias dsr="dsr-fn"
-# alias dstopall="docker kill $(docker ps -q)"
