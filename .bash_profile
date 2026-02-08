@@ -55,3 +55,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # apple silicon macs homebrew files should live under `/opt/homebrew`
 # if intel: this eval breaks `brew` cli, so dont do it please
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Deduplicate PATH (preserves order, keeps first occurrence)
+PATH="$(printf %s "$PATH" | awk -v RS=: -v ORS=: '!a[$0]++' | sed 's/:$//')"
+export PATH
